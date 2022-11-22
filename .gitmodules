@@ -1,0 +1,12 @@
+[submodule "nushell"]
+	path = nushell
+	url = git@github.com:groatmilk/nu-conf.git
+[submodule "sys"]
+	path = sys
+	url = git@github.com:groatmilk/bash-conf.git
+[submodule "nvim"]
+	path = nvim
+	url = git@github.com:groatmilk/nvim-conf.git
+[submodule "kitty"]
+	path = kitty
+	url = https://github.com/groatmilk/kitty-conf
