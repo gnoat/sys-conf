@@ -138,6 +138,7 @@ if [[ go ]]; then
         sudo apt update
         sudo apt install golang-go
     fi
+    go install golang.org/x/tools/gopls@latest
     echo $(go version)
 fi
 
