@@ -16,6 +16,7 @@ if [[ "" == "$1" ]]; then
     nushell=true
     terraform=true
     sys=true
+    go=true
 else
     python=false
     rust=false
@@ -24,7 +25,8 @@ else
     kitty=false
     nushell=false
     terraform=false
-    sys=true
+    sys=false
+    go=false
     if [[ "python" == *"$1"* ]]; then
         python=true
     fi
@@ -48,6 +50,9 @@ else
     fi
     if [[ "sys" == *"$1"* ]]; then
         sys=true
+    fi
+    if [[ "go" == *"$1" ]]; then
+        go=true
     fi
 fi
 
@@ -124,6 +129,18 @@ if [[ node ]]; then
     echo $(node -v)
     echo $(npm -v)
 fi
+
+if [[ go ]]; then
+    if [[ "$os" == "MACOS" ]]; then
+        brew install go
+    elif [[ "$os" == "UBUNTU" ]]; then
+        sudo add-apt-repository ppa:longsleep/golang-backports
+        sudo apt update
+        sudo apt install golang-go
+    fi
+    echo $(go version)
+fi
+
 
 if [[ kitty ]]; then
     if [[ "$os" == "MACOS" ]]; then
