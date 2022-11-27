@@ -126,6 +126,7 @@ if [[ node ]]; then
         apt install npm
     fi
     npm i -g pyright
+    npm install --global yarn
     echo $(node -v)
     echo $(npm -v)
 fi
